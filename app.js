@@ -55,6 +55,8 @@ passport.deserializeUser(User.deserializeUser());
 
 //flash middleware
 app.use((req, res, next) => {
+  // console.log(req.session);
+  res.locals.currentUser = req.user; //for those who signed in
   res.locals.success = req.flash("success");
   res.locals.error = req.flash("error");
   next();
