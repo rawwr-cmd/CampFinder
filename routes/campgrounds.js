@@ -36,7 +36,8 @@ router.get(
   "/:id",
   catchAsync(async (req, res) => {
     const campground = await Campground.findById(req.params.id)
-      .populate("reviews")
+      //nesting populate (populating reviews within Campground and then populating Author within reviews)
+      .populate({ path: "reviews", populate: { path: "author" } })
       .populate("author");
     // console.log(campground);
     if (!campground) {
