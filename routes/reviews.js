@@ -3,22 +3,9 @@ const router = express.Router({ mergeParams: true }); //for accessing id from ap
 
 const Campground = require("../models/campground");
 const Review = require("../models/review");
-
-const { reviewSchema } = require("../schemas");
-
+const { validateReview } = require("../middleware");
 const catchAsync = require("../utils/catchAsync");
 const expressError = require("../utils/ExpressError");
-
-//joi Validation Middleware Review
-const validateReview = (req, res, next) => {
-  const { error } = reviewSchema.validate(req.body);
-  if (error) {
-    const msg = error.details.map((el) => el.message).join(",");
-    throw new expressError(msg, 400);
-  } else {
-    next();
-  }
-};
 
 router.post(
   "/",
