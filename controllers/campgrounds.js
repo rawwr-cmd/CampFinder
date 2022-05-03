@@ -52,7 +52,7 @@ module.exports.renderEditForm = async (req, res) => {
 module.exports.updateCampground = async (req, res) => {
   // res.send("it worked");
   const { id } = req.params;
-  console.log(req.body);
+  // console.log(req.body);
   const campground = await Campground.findByIdAndUpdate(id, {
     ...req.body.campground,
   });
@@ -75,7 +75,7 @@ module.exports.updateCampground = async (req, res) => {
         },
       },
     });
-    console.log(campground);
+    // console.log(campground);
   }
   req.flash("success", "successfully updated campground!");
   res.redirect(`/campgrounds/${campground.id}`);
