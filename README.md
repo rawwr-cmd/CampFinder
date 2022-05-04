@@ -1,3 +1,3 @@
 # CampFinder helps you find the cool places for camping
 
-## to be updated upon completion
+## [Have fun camping!](https://https://enigmatic-depths-44055.herokuapp.com "CampFinder")
