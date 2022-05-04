@@ -3,7 +3,6 @@
 <link rel="stylesheet" href="/stylesheets/stars.css" />
 <div class="row">
   <div class="col-6">
-    <div id="map" style="width: 400px; height: 300px"></div>
     <div id="campgroundControls" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <!-- if i === 0, then(?) active : (otherwise) '' (add nothing) -->
@@ -69,6 +68,7 @@
   </div>
 
   <div class="col-6">
+    <div id="map"></div>
     <% if(currentUser) { %>
     <h2>Leave a Review</h2>
     <form
